@@ -6,9 +6,9 @@ from collections import defaultdict
 
 
 def analyze_directory(target_path, output_csv='folder_report.csv'):
-    # 1. 用于存储每个文件夹的统计数据（总大小和文件总数）
+    # 用于存储每个文件夹的统计数据（总大小和文件总数）
     folder_stats = defaultdict(lambda: {'size_kb': 0.0, 'file_count': 0})
-    # 2. 新增：用于存储每个具体文件的详细信息
+    # 用于存储每个具体文件的详细信息
     file_details = []
 
     print(f"正在扫描目录：{target_path}，请稍候...")
@@ -26,7 +26,7 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
                 folder_stats[root]['size_kb'] += file_size_kb
                 folder_stats[root]['file_count'] += 1
 
-                # 新增：将当前文件的详细信息添加到列表中
+                # 将当前文件的详细信息添加到列表中
                 file_details.append({
                     '所在文件夹': root,
                     '文件名': file,
@@ -49,7 +49,7 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             writer.writeheader()
-            # 遍历我们收集到的每一个文件详情
+            # 遍历收集到的每一个文件详情
             for detail in file_details:
                 folder_path = detail['所在文件夹']
                 stats = folder_stats[folder_path]
@@ -61,13 +61,13 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
                     '文件夹总大小(KB)': round(stats['size_kb'], 2),
                     '文件夹文件总数': stats['file_count']
                 })
-        print(f"✅ 统计完成！文件树报告已成功导出至：{output_csv}")
+        print(f"文件树已成功导出至：{output_csv}")
     except Exception as e:
-        print(f"❌ 导出 CSV 失败: {e}")
+        print(f"导出 CSV 失败: {e}")
 
 
 if __name__ == "__main__":
-    # 在这里替换为你想要扫描的本地文件夹路径
     TARGET_FOLDER = r"H:\核心存储"
+    EXPORT_FOLDER = ''
 
-    analyze_directory(TARGET_FOLDER)
+    analyze_directory(TARGET_FOLDER, EXPORT_FOLDER)
