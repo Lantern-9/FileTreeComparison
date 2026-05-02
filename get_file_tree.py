@@ -1,4 +1,5 @@
-# 获取文件树
+# 获取本地指定文件夹下的文件树
+# 空文件夹不会过掉
 
 import os
 import csv
@@ -15,6 +16,13 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
 
     # 遍历目录树
     for root, dirs, files in os.walk(target_path):
+        if root != target_path:
+            temp_path = os.path.split(root)
+            file_details.append({
+                '所在文件夹': temp_path[0],
+                '文件名': temp_path[1],
+                '文件大小(KB)': 0
+            })
         for file in files:
             file_path = os.path.join(root, file)
             try:
@@ -33,7 +41,7 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
                     '文件大小(KB)': round(file_size_kb, 2)
                 })
             except Exception as e:
-                print(f"无法读取文件: {file_path}, 错误: {e}")
+                print(f"无法读取文件: {file_path}, 错误: {e.__traceback__.tb_lineno, e}")
 
         # 确保空的子文件夹也会出现在统计中
         for dir_name in dirs:
@@ -47,27 +55,29 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
             # 修改表头：增加了文件名相关的列
             fieldnames = ['所在文件夹', '文件名', '文件大小(KB)', '文件夹总大小(KB)', '文件夹文件总数']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
             writer.writeheader()
+
             # 遍历收集到的每一个文件详情
             for detail in file_details:
                 folder_path = detail['所在文件夹']
                 stats = folder_stats[folder_path]
                 # 写入每一行的数据：既包含当前文件的信息，也包含它所属文件夹的汇总信息
-                writer.writerow({
-                    '所在文件夹': folder_path,
-                    '文件名': detail['文件名'],
-                    '文件大小(KB)': detail['文件大小(KB)'],
-                    '文件夹总大小(KB)': round(stats['size_kb'], 2),
-                    '文件夹文件总数': stats['file_count']
-                })
+                # 且去掉指定目录
+                folder_path = folder_path.replace(f'{target_path}', '')
+                if folder_path:
+                    writer.writerow({
+                        '所在文件夹': folder_path.replace(f'{target_path}', ''),
+                        '文件名': detail['文件名'],
+                        '文件大小(KB)': detail['文件大小(KB)'],
+                        '文件夹总大小(KB)': round(stats['size_kb'], 2),
+                        '文件夹文件总数': stats['file_count']
+                    })
         print(f"文件树已成功导出至：{output_csv}")
     except Exception as e:
-        print(f"导出 CSV 失败: {e}")
+        print(f"导出 CSV 失败: {e.__traceback__.tb_lineno, e}")
 
 
 if __name__ == "__main__":
-    TARGET_FOLDER = r"H:\核心存储"
-    EXPORT_FOLDER = ''
+    TARGET_FOLDER = input('请输入目标文件夹地址: ')
 
-    analyze_directory(TARGET_FOLDER, EXPORT_FOLDER)
+    analyze_directory(TARGET_FOLDER)
