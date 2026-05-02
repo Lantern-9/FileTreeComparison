@@ -5,6 +5,9 @@ from pathlib import Path
 
 
 def baidu_directory(baidu_output, target_file, output_csv='folder_report_baidu.csv'):
+    """
+    将百度网盘生导出的文件树写入csv
+    """
     data = []
     with open(baidu_output, 'r', encoding='utf-8-sig') as f:
         lines = f.read().splitlines()
@@ -30,11 +33,25 @@ def baidu_directory(baidu_output, target_file, output_csv='folder_report_baidu.c
     print(f"百度网盘文件树已成功导出至：{output_csv}")
 
 
+def get_file_tree_baidu(baidu_output, target_file):
+    """
+    将百度网盘生导出的文件树放入列表
+    """
+    data = []
+    with open(baidu_output, 'r', encoding='utf-8-sig') as f:
+        lines = f.read().splitlines()
+        for line in lines:
+            if line != target_file:
+                data.append(line.replace(f'{target_file}', ''))
+    return data
+
+
 if __name__ == '__main__':
     # 获取百度网盘导出的文件路径
     txt = input("请输入百度网盘导出的txt文本路径: ")
     target = input("请输入百度网盘里指定的文件夹路径: ")
 
-    baidu_directory(txt, target)
+    baidu = get_file_tree_baidu(txt, target)
+    # baidu_directory(txt, target)
 
 
