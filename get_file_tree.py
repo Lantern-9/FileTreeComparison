@@ -7,6 +7,9 @@ from collections import defaultdict
 
 
 def analyze_directory(target_path, output_csv='folder_report.csv'):
+    """
+    将本地指定文件夹的文件树写入csv
+    """
     # 用于存储每个文件夹的统计数据（总大小和文件总数）
     folder_stats = defaultdict(lambda: {'size_kb': 0.0, 'file_count': 0})
     # 用于存储每个具体文件的详细信息
@@ -77,7 +80,32 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
         print(f"导出 CSV 失败: {e.__traceback__.tb_lineno, e}")
 
 
+def get_file_tree(target_path):
+    """
+    获取本地指定文件夹的文件数，并放入列表
+    """
+    data = []
+    try:
+        for root, dirs, files in os.walk(target_path):
+            for dir_name in dirs:
+                dir_path = os.path.join(root, dir_name).replace('\\', '/').replace(rf'{target_path}', '')
+                data.append(dir_path)
+                # print(dir_path)
+            for file in files:
+                # 排除临时文件
+                if file.startswith("~$"):
+                    continue
+                file_path = os.path.join(root, file).replace('\\', '/').replace(rf'{target_path}', '')
+                data.append(file_path)
+                # print(file_path)
+        return data
+    except Exception as e:
+        print(f"列表生成失败: {e.__traceback__.tb_lineno, e}")
+
+
 if __name__ == "__main__":
     TARGET_FOLDER = input('请输入目标文件夹地址: ')
 
-    analyze_directory(TARGET_FOLDER)
+    base = get_file_tree(TARGET_FOLDER)
+
+    # analyze_directory(TARGET_FOLDER)
