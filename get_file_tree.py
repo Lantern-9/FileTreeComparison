@@ -15,20 +15,21 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
     # 用于存储每个具体文件的详细信息
     file_details = []
 
-    print(f"正在扫描目录：{target_path}，请稍候...")
-
     # 遍历目录树
-    for root, dirs, files in os.walk(target_path):
-        if root != target_path:
-            temp_path = os.path.split(root)
-            file_details.append({
-                '所在文件夹': temp_path[0],
-                '文件名': temp_path[1],
-                '文件大小(KB)': 0
-            })
-        for file in files:
-            file_path = os.path.join(root, file)
-            try:
+    try:
+        if not os.path.exists(target_path):
+            raise Exception("路径不存在")
+
+        for root, dirs, files in os.walk(target_path):
+            if root != target_path:
+                temp_path = os.path.split(root)
+                file_details.append({
+                    '所在文件夹': temp_path[0],
+                    '文件名': temp_path[1],
+                    '文件大小(KB)': 0
+                })
+            for file in files:
+                file_path = os.path.join(root, file)
                 # 获取文件大小（字节），并转换为 KB
                 file_size_bytes = os.path.getsize(file_path)
                 file_size_kb = file_size_bytes / 1024
@@ -43,14 +44,15 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
                     '文件名': file,
                     '文件大小(KB)': round(file_size_kb, 2)
                 })
-            except Exception as e:
-                print(f"无法读取文件: {file_path}, 错误: {e.__traceback__.tb_lineno, e}")
 
-        # 确保空的子文件夹也会出现在统计中
-        for dir_name in dirs:
-            dir_path = os.path.join(root, dir_name)
-            if dir_path not in folder_stats:
-                folder_stats[dir_path] = {'size_kb': 0.0, 'file_count': 0}
+            # 确保空的子文件夹也会出现在统计中
+            for dir_name in dirs:
+                dir_path = os.path.join(root, dir_name)
+                if dir_path not in folder_stats:
+                    folder_stats[dir_path] = {'size_kb': 0.0, 'file_count': 0}
+
+    except Exception as e:
+        raise Exception(e) from e
 
     # 导出为 CSV 文件
     try:

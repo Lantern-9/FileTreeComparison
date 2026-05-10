@@ -1,0 +1,351 @@
+2026-05-10 14:26:18,043 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 22, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 31, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 56, in analyze_directory
+    raise Exception(f"{Path(e.__traceback__.tb_frame.f_code.co_filename), e.__traceback__.tb_lineno, e}") from e
+Exception: (WindowsPath('F:/FileTreeComparison/get_file_tree.py'), 22, Exception('路径不存在'))
+
+2026-05-10 14:26:40,116 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 22, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 31, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 56, in analyze_directory
+    raise Exception(f"{Path(e.__traceback__.tb_frame.f_code.co_filename), e.__traceback__.tb_lineno, e}") from e
+Exception: (WindowsPath('F:/FileTreeComparison/get_file_tree.py'), 22, Exception('路径不存在'))
+
+2026-05-10 14:31:50,082 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 22, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 34, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 56, in analyze_directory
+    raise Exception(f"{Path(e.__traceback__.tb_frame.f_code.co_filename), e.__traceback__.tb_lineno, e}") from e
+Exception: (WindowsPath('F:/FileTreeComparison/get_file_tree.py'), 22, Exception('路径不存在'))
+
+2026-05-10 14:32:07,900 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 22, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 34, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 56, in analyze_directory
+    raise Exception(f"{Path(e.__traceback__.tb_frame.f_code.co_filename), e.__traceback__.tb_lineno, e}") from e
+Exception: (WindowsPath('F:/FileTreeComparison/get_file_tree.py'), 22, Exception('路径不存在'))
+
+2026-05-10 14:32:35,060 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 22, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 37, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 56, in analyze_directory
+    raise Exception(f"{Path(e.__traceback__.tb_frame.f_code.co_filename), e.__traceback__.tb_lineno, e}") from e
+Exception: (WindowsPath('F:/FileTreeComparison/get_file_tree.py'), 22, Exception('路径不存在'))
+
+2026-05-10 14:33:14,876 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 22, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 34, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 56, in analyze_directory
+    raise Exception(f"{Path(e.__traceback__.tb_frame.f_code.co_filename), e.__traceback__.tb_lineno, e}") from e
+Exception: (WindowsPath('F:/FileTreeComparison/get_file_tree.py'), 22, Exception('路径不存在'))
+
+2026-05-10 15:03:43,209 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 77, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:21:28,723 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 90, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:21:38,242 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 90, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:22:04,515 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 90, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:40:23,963 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 95, in onClick_csvButton
+    baidu_directory(content_1)
+TypeError: baidu_directory() missing 1 required positional argument: 'target_file'
+
+2026-05-10 15:41:23,762 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 94, in onClick_csvButton
+    baidu_directory(content_1)
+TypeError: baidu_directory() missing 1 required positional argument: 'target_file'
+
+2026-05-10 15:49:07,664 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 87, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:49:21,171 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 87, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:51:00,618 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 87, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:53:43,921 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 87, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:57:14,346 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 87, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 15:58:07,665 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 87, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(f"{e.__traceback__.tb_lineno, e}") from e
+Exception: (21, Exception('路径不存在'))
+
+2026-05-10 16:06:02,722 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 87, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(e) from e
+Exception: 路径不存在
+
+2026-05-10 16:10:50,538 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 90, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(e) from e
+Exception: 路径不存在
+
+2026-05-10 19:35:46,622 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 90, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(e) from e
+Exception: 路径不存在
+
+2026-05-10 20:44:08,615 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 97, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(e) from e
+Exception: 路径不存在
+
+2026-05-10 20:44:23,391 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 100, in onClick_csvButton
+    baidu_directory(content_1)
+TypeError: baidu_directory() missing 1 required positional argument: 'target_file'
+
+2026-05-10 20:57:58,360 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 110, in onClick_csvButton_2
+    analyze_directory(content_2)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(e) from e
+Exception: 路径不存在
+
+2026-05-10 22:51:10,907 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree_baidu.py", line 13, in baidu_directory
+    with open(baidu_output, 'r', encoding='utf-8-sig') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'H:/'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 156, in onClick_csvButton
+    baidu_directory(self.baidu_path, content_1)
+  File "F:\FileTreeComparison\get_file_tree_baidu.py", line 35, in baidu_directory
+    raise Exception(e) from e
+Exception: [Errno 2] No such file or directory: 'H:/'
+
+2026-05-10 23:08:17,850 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree_baidu.py", line 13, in baidu_directory
+    with open(baidu_output, 'r', encoding='utf-8-sig') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'H:/'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 140, in onClick_csvButton_2
+    baidu_directory(self.baidu_path, content_2)
+  File "F:\FileTreeComparison\get_file_tree_baidu.py", line 35, in baidu_directory
+    raise Exception(e) from e
+Exception: [Errno 2] No such file or directory: 'H:/'
+
+2026-05-10 23:12:15,201 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 161, in onClick_csvButton
+    analyze_directory(content_1)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(e) from e
+Exception: 路径不存在
+
