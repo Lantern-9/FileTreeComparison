@@ -349,3 +349,17 @@ Traceback (most recent call last):
     raise Exception(e) from e
 Exception: 路径不存在
 
+2026-05-12 08:03:41,962 - DEBUG - Traceback (most recent call last):
+  File "F:\FileTreeComparison\get_file_tree.py", line 21, in analyze_directory
+    raise Exception("路径不存在")
+Exception: 路径不存在
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\FileTreeComparison\comparison.py", line 117, in onClick_csvButton
+    result = analyze_directory(content_1, file_path)
+  File "F:\FileTreeComparison\get_file_tree.py", line 55, in analyze_directory
+    raise Exception(e) from e
+Exception: 路径不存在
+

@@ -3,7 +3,7 @@ import logging
 from get_file_tree import get_file_tree, analyze_directory
 import sys
 import ui
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTextBrowser, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTextBrowser, QMessageBox, QFileDialog
 from PyQt5.QtGui import QIcon
 
 LOG = r'app.log'
@@ -27,8 +27,8 @@ class LogViewer(QMainWindow):
             html_content = ""
             for line in lines:
                 # 简单的颜色处理逻辑
-                if "ERROR" in line:
-                # if "DEBUG" in line:
+                # if "ERROR" in line:
+                if "DEBUG" in line:
                     html_content += f'<font color="red"><b>{line.strip()}</b></font><br>'
                 elif "WARNING" in line:
                     html_content += f'<font color="orange">{line.strip()}</font><br>'
@@ -83,9 +83,10 @@ class MainWindow(QMainWindow):
         """
         if content_2 := self.ui.lineEdit_2.text():
             try:
-                self.setEcho(f"正在扫描目录：{content_2}，请稍候...")
-                analyze_directory(content_2)
-                self.setEcho(f"已导出至桌面")
+                file_path = self.save_file()
+                if file_path:
+                    result = analyze_directory(content_2, file_path)
+                    self.addEcho(result)
             except Exception as e:
                 error = traceback.format_exc()
                 logging.debug(error)
@@ -95,15 +96,26 @@ class MainWindow(QMainWindow):
             # 弹窗提示路径为空
             QMessageBox.warning(self, '警告', '路径为空', QMessageBox.Ok)
 
+    def save_file(self):
+        file_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "保存文件",  # 对话框标题
+            "文件树导出.csv",  # 默认文件名
+            "所有文件 (*);;文本文件 (*.csv)"  # 文件类型过滤器
+        )
+        if file_path:  # 用户点击了保存
+            return file_path
+
     def onClick_csvButton(self):
         """
         导出csv被点击_第一行
         """
         if content_1 := self.ui.lineEdit.text():
             try:
-                self.setEcho(f"正在扫描目录：{content_1}，请稍候...")
-                analyze_directory(content_1)
-                self.setEcho(f"已导出至桌面")
+                file_path = self.save_file()
+                if file_path:
+                    result = analyze_directory(content_1, file_path)
+                    self.addEcho(result)
             except Exception as e:
                 error = traceback.format_exc()
                 logging.debug(error)
@@ -140,10 +152,12 @@ class MainWindow(QMainWindow):
             self.compareSets(set_1, set_2)
 
     def onClick_compareButton(self):
+        self.setEcho('')
         target_1 = self.ui.lineEdit.text()
         target_2 = self.ui.lineEdit_2.text()
         if not (target_1 and target_2):
             QMessageBox.warning(self, "提示", "输入为空")
+            return
 
         set_1 = set(get_file_tree(target_1))
         set_2 = set(get_file_tree(target_2))

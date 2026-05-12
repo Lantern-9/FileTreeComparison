@@ -77,9 +77,9 @@ def analyze_directory(target_path, output_csv='folder_report.csv'):
                         '文件夹总大小(KB)': round(stats['size_kb'], 2),
                         '文件夹文件总数': stats['file_count']
                     })
-        print(f"文件树已成功导出至：{output_csv}")
+        return f"文件树已成功导出至：{output_csv}"
     except Exception as e:
-        print(f"导出 CSV 失败: {e.__traceback__.tb_lineno, e}")
+        raise Exception(e) from e
 
 
 def get_file_tree(target_path):
