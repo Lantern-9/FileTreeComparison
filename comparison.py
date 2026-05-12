@@ -5,8 +5,18 @@ import sys
 import ui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTextBrowser, QMessageBox, QFileDialog
 from PyQt5.QtGui import QIcon
+import os
 
 LOG = r'app.log'
+
+
+def resource_path(relative_path):
+    """获取资源的真实路径（打包后也能用）"""
+    if hasattr(sys, '_MEIPASS'):
+        # 如果是打包后的 exe，资源在临时解压目录里
+        return os.path.join(sys._MEIPASS, relative_path)
+    # 如果是开发环境，直接用相对路径
+    return os.path.join(os.path.abspath("."), relative_path)
 
 
 # 封装日志查看窗口，是直接用 pyqt5 写和，没用 Designer
@@ -179,7 +189,7 @@ if __name__ == '__main__':
     )
 
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon(r'img/tree.png'))
+    app.setWindowIcon(QIcon(resource_path(r'img/tree.png')))
     main_window = MainWindow()  # 实例化自己的主窗口类
     main_window.show()
     sys.exit(app.exec_())
